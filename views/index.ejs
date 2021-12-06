@@ -37,16 +37,19 @@
                     <% }) %>
                 </tbody>
             </table>
+
             <% if(data.previous !== undefined) {%>
                 <a href="/?page=<%= data.previous.page %>&limit=4">
-                <button type="button">
-                        <%= data.previous.page %></button>
-                    </a>
+                    <button class="btn btn-secondary" type="button">
+                        << Pre
+                    </button>
+                </a>
             <% } %>
+            &nbsp
             <% if(data.next !== undefined) { %>
                 <a href="/?page=<%= data.next.page %>&limit=4">
-                <button type="button">
-                        <%= data.next.page %>
+                    <button class="btn btn-secondary" type="button">
+                        Next >>
                     </button>
                 </a>
            <% } %>

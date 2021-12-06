@@ -30,7 +30,7 @@ app.get('/', async (req, res) => {
 
     if(startIndex > 0){
         result.previous = {
-            page : page -1,
+            page : page - 1,
             limit : limit
         }
     }
