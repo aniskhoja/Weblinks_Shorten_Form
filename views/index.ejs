@@ -27,19 +27,29 @@
                     <th>click</th>
                 </thead>
                 <tbody>
-                    
                     <% url.forEach(url => { %>
                         <tr>
                         <td><a href="<%= url.shortUrl %>">
-                        <%=  url.url  %> </a> </td>
+                        <%= url.url %> </a> </td>
                         <td><a href="<%= url.shortUrl %>"><%= url.shortUrl %></a> </td>
-                        <td>
-                            <%= url.click %>
-                        </td>
+                        <td><%= url.click %></td>
                     </tr>
                     <% }) %>
                 </tbody>
             </table>
+            <% if(data.previous !== undefined) {%>
+                <a href="/?page=<%= data.previous.page %>&limit=4">
+                <button type="button">
+                        <%= data.previous.page %></button>
+                    </a>
+            <% } %>
+            <% if(data.next !== undefined) { %>
+                <a href="/?page=<%= data.next.page %>&limit=4">
+                <button type="button">
+                        <%= data.next.page %>
+                    </button>
+                </a>
+           <% } %>
         </form>
     </div>
 </body>
